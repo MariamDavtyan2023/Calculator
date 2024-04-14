@@ -3,6 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="activity"
+            type="com.example.calculator.MainActivity" />
+
+        <variable
+            name="operator"
+            type="com.example.calculator.Operator" />
+    </data>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,6 +49,7 @@
             <Button
                 android:id="@+id/button0"
                 style="@style/myStyleNumbers"
+                android:onClick="@{() -> activity.numberClick(button0.getText().toString())}"
                 android:layout_width="@dimen/dim_0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dim_4dp"
@@ -48,6 +59,7 @@
             <Button
                 android:id="@+id/buttonDot"
                 style="@style/myStyleNumbers"
+                android:onClick="@{() -> activity.numberClick(buttonDot.getText().toString())}"
                 android:layout_width="@dimen/dim_0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dim_4dp"
@@ -77,6 +89,7 @@
             <Button
                 android:id="@+id/button1"
                 style="@style/myStyleNumbers"
+                android:onClick="@{() -> activity.numberClick(button1.getText().toString())}"
                 android:layout_width="@dimen/dim_0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dim_4dp"
@@ -86,6 +99,7 @@
             <Button
                 android:id="@+id/button2"
                 style="@style/myStyleNumbers"
+                android:onClick="@{() -> activity.numberClick(button2.getText().toString())}"
                 android:layout_width="@dimen/dim_0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dim_4dp"
@@ -95,6 +109,7 @@
             <Button
                 android:id="@+id/button3"
                 style="@style/myStyleNumbers"
+                android:onClick="@{() -> activity.numberClick(button3.getText().toString())}"
                 android:layout_width="@dimen/dim_0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dim_4dp"
@@ -104,6 +119,7 @@
             <Button
                 android:id="@+id/buttonSum"
                 style="@style/myStyleOperators"
+                android:onClick="@{() -> activity.operatorClick(operator.PLUS)}"
                 android:layout_width="@dimen/dim_0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dim_4dp"
@@ -124,6 +140,7 @@
             <Button
                 android:id="@+id/button4"
                 style="@style/myStyleNumbers"
+                android:onClick="@{() -> activity.numberClick(button4.getText().toString())}"
                 android:layout_width="@dimen/dim_0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dim_4dp"
@@ -133,6 +150,7 @@
             <Button
                 android:id="@+id/button5"
                 style="@style/myStyleNumbers"
+                android:onClick="@{() -> activity.numberClick(button5.getText().toString())}"
                 android:layout_width="@dimen/dim_0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dim_4dp"
@@ -142,6 +160,7 @@
             <Button
                 android:id="@+id/button6"
                 style="@style/myStyleNumbers"
+                android:onClick="@{() -> activity.numberClick(button6.getText().toString())}"
                 android:layout_width="@dimen/dim_0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dim_4dp"
@@ -151,6 +170,7 @@
             <Button
                 android:id="@+id/buttonMinus"
                 style="@style/myStyleOperators"
+                android:onClick="@{() -> activity.operatorClick(operator.MINUS)}"
                 android:layout_width="@dimen/dim_0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dim_4dp"
@@ -171,6 +191,7 @@
             <Button
                 android:id="@+id/button7"
                 style="@style/myStyleNumbers"
+                android:onClick="@{() -> activity.numberClick(button7.getText().toString())}"
                 android:layout_width="@dimen/dim_0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dim_4dp"
@@ -180,6 +201,7 @@
             <Button
                 android:id="@+id/button8"
                 style="@style/myStyleNumbers"
+                android:onClick="@{() -> activity.numberClick(button8.getText().toString())}"
                 android:layout_width="@dimen/dim_0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dim_4dp"
@@ -189,6 +211,7 @@
             <Button
                 android:id="@+id/button9"
                 style="@style/myStyleNumbers"
+                android:onClick="@{() -> activity.numberClick(button9.getText().toString())}"
                 android:layout_width="@dimen/dim_0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dim_4dp"
@@ -198,6 +221,7 @@
             <Button
                 android:id="@+id/buttonMultiplication"
                 style="@style/myStyleOperators"
+                android:onClick="@{() -> activity.operatorClick(operator.MULTIPLICATION)}"
                 android:layout_width="@dimen/dim_0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dim_4dp"
@@ -237,6 +261,7 @@
             <Button
                 android:id="@+id/buttonDivision"
                 style="@style/myStyleOperators"
+                android:onClick="@{() -> activity.operatorClick(operator.DIVISION)}"
                 android:layout_width="@dimen/dim_0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dim_4dp"

@@ -16,110 +16,29 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView<ActivityMainBinding?>(this, R.layout.activity_main).apply {
+            activity = this@MainActivity
+        }
         initListeners()
+    }
+
+    fun numberClick(value: String) {
+        if (lastOperator == Operator.EQUAL) {
+            binding.textViewScreen.text = "0"
+            lastOperator = null
+        }
+        printText(value)
+    }
+
+    fun operatorClick(value: Operator) {
+        printText(value.str)
+        checkResult(value.str)
+        lastOperator = value
     }
 
     private fun initListeners() {
         with(binding){
-            button0.setOnClickListener {
-                if (lastOperator == Operator.EQUAL) {
-                    textViewScreen.text = "0"
-                }
-                printText(getString(R.string.button_0))
-            }
-            button1.setOnClickListener {
-                if (lastOperator == Operator.EQUAL) {
-                    textViewScreen.text = "0"
-                    lastOperator = null
-                }
-                printText(getString(R.string.button_1))
-            }
-            button2.setOnClickListener {
-                if (lastOperator == Operator.EQUAL) {
-                    textViewScreen.text = "0"
-                    lastOperator = null
-                }
-                printText(getString(R.string.button_2))
-            }
-            button3.setOnClickListener {
-                if (lastOperator == Operator.EQUAL) {
-                    textViewScreen.text = "0"
-                    lastOperator = null
-                }
-                printText(getString(R.string.button_3))
-            }
-            button4.setOnClickListener {
-                if (lastOperator == Operator.EQUAL) {
-                    textViewScreen.text = "0"
-                    lastOperator = null
-                }
-                printText(getString(R.string.button_4))
-            }
-            button5.setOnClickListener {
-                if (lastOperator == Operator.EQUAL) {
-                    textViewScreen.text = "0"
-                    lastOperator = null
-                }
-                printText(getString(R.string.button_5))
-            }
-            button6.setOnClickListener {
-                if (lastOperator == Operator.EQUAL) {
-                    textViewScreen.text = "0"
-                    lastOperator = null
-                }
-                printText(getString(R.string.button_6))
-            }
-            button7.setOnClickListener {
-                if (lastOperator == Operator.EQUAL) {
-                    textViewScreen.text = "0"
-                    lastOperator = null
-                }
-                printText(getString(R.string.button_7))
-            }
-            button8.setOnClickListener {
-                if (lastOperator == Operator.EQUAL) {
-                    textViewScreen.text = "0"
-                    lastOperator = null
-                }
-                printText(getString(R.string.button_8))
-            }
-            button9.setOnClickListener {
-                if (lastOperator == Operator.EQUAL) {
-                    textViewScreen.text = "0"
-                    lastOperator = null
-                }
-                printText(getString(R.string.button_9))
-            }
-            buttonDot.setOnClickListener {
-                if (lastOperator == Operator.EQUAL) {
-                    textViewScreen.text = "0"
-                    lastOperator = null
 
-                }
-                printText(getString(R.string.button_dot))
-            }
-            buttonSum.setOnClickListener {
-                printText(Operator.PLUS.str)
-                checkResult(Operator.PLUS.str)
-                lastOperator = Operator.PLUS
-            }
-            buttonMinus.setOnClickListener {
-                printText(Operator.MINUS.str)
-                checkResult(Operator.MINUS.str)
-                lastOperator = Operator.MINUS
-            }
-            buttonMultiplication.setOnClickListener {
-                printText(Operator.MULTIPLICATION.str)
-                checkResult(Operator.MULTIPLICATION.str)
-                lastOperator = Operator.MULTIPLICATION
-            }
-
-            buttonDivision.setOnClickListener {
-                printText(Operator.DIVISION.str)
-                checkResult(Operator.DIVISION.str)
-                lastOperator = Operator.DIVISION
-            }
             buttonC.setOnClickListener {
                 textViewScreen.text = "0"
                 number1 = 0.0
