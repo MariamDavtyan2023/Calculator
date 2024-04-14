@@ -2,6 +2,7 @@ package com.example.calculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.example.calculator.databinding.ActivityMainBinding
 
@@ -73,7 +74,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun printText(text: String) {
         val screenText = binding.textViewScreen.text.toString()
-        if (screenText == "0" && text != ".") {
+        if (screenText == "0" && text != "." && lastOperator == null) {
             binding.textViewScreen.text = text
         } else if (screenText.contains("+") ||
             screenText.contains("-") ||
